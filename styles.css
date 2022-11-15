@@ -1,0 +1,117 @@
+/* ######
+
+- Mobile: 375px
+- Desktop: 1440px
+- Font size: 15px
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 200, 400, 600
+
+###### */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: hsl(234deg, 12%, 34%);
+  background: hsl(0deg, 0%, 98%);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  max-width: 90%;
+  margin: 5rem auto;
+}
+.header_title1, .header_title2 {
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+@media screen and (min-width: 300px) {
+  .header_title1, .header_title2 {
+    font-size: 5vmax;
+  }
+}
+@media screen and (min-width: 550px) {
+  .header_title1, .header_title2 {
+    font-size: 2rem;
+  }
+}
+.header_title2 {
+  font-weight: 600;
+}
+
+/* MAIN SECTION */
+main {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 80%;
+  place-items: center;
+}
+@media screen and (min-width: 860px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+/* CARD */
+.card {
+  background: white;
+  width: 100%;
+  height: 250px; /* make this more responsive if possible */
+  box-shadow: 0 0.5rem 1.5rem hsl(229deg, 6%, 66%); /* needs to be softer */
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 500px) {
+  .card {
+    width: 350px;
+  }
+}
+.card_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 1200px) {
+  .card:first-of-type, .card:last-of-type {
+    grid-row: span 2;
+  }
+}
+.card_img {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+.card:nth-of-type(1) > hr {
+  border-color: hsl(180deg, 62%, 55%);
+}
+.card:nth-of-type(2) > hr {
+  border-color: hsl(0deg, 78%, 62%);
+}
+.card:nth-of-type(3) > hr {
+  border-color: hsl(34deg, 97%, 64%);
+}
+.card:nth-of-type(4) > hr {
+  border-color: hsl(212deg, 86%, 64%);
+}
+
+hr {
+  border: 2px solid;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=styles.css.map */
