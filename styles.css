@@ -18,82 +18,105 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: hsl(234deg, 12%, 34%);
+  color: hsl(229deg, 6%, 66%);
   background: hsl(0deg, 0%, 98%);
 }
 
 /* HEADER */
 .header {
   text-align: center;
-  max-width: 90%;
+  width: 80%;
   margin: 5rem auto;
 }
-.header_title1, .header_title2 {
-  font-size: 1.25rem;
-  font-weight: 200;
-}
-@media screen and (min-width: 300px) {
-  .header_title1, .header_title2 {
-    font-size: 5vmax;
+@media screen and (min-width: 810px) {
+  .header {
+    max-width: 60%;
+    margin-bottom: 4rem;
   }
 }
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 1200px) {
+  .header {
+    max-width: 40%;
+  }
+}
+.header_title1, .header_title2 {
+  font-size: 1.5rem;
+  color: hsl(234deg, 12%, 34%);
+  font-weight: 200;
+}
+@media screen and (min-width: 810px) {
   .header_title1, .header_title2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 }
 .header_title2 {
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+.header_text {
+  font-size: 1.025rem;
 }
 
 /* MAIN SECTION */
 main {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  grid-auto-columns: 1fr;
-  gap: 2rem;
-  margin: 0 auto;
-  max-width: 80%;
+  grid-template-columns: 310px;
+  grid-template-rows: repeat(4, 220px);
+  gap: 1.5rem;
+  margin: 0 auto auto auto;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   place-items: center;
 }
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 810px) {
   main {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: repeat(2, 250px);
+    grid-auto-columns: 350px;
+    gap: 2rem;
   }
 }
 
 /* CARD */
 .card {
   background: white;
-  width: 100%;
-  height: 250px; /* make this more responsive if possible */
-  box-shadow: 0 0.5rem 1.5rem hsl(229deg, 6%, 66%); /* needs to be softer */
-  padding: 2rem;
+  width: 310px;
+  height: 220px; /* make this more responsive if possible */
+  box-shadow: 0 0.5rem 2rem -1rem hsl(229deg, 6%, 66%);
   border-radius: 10px;
+  padding: 1.7rem;
   position: relative;
   overflow: hidden;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 810px) {
   .card {
     width: 350px;
+    height: 250px;
   }
 }
 .card_title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  color: hsl(234deg, 12%, 34%);
+  margin-bottom: 0.3rem;
 }
 @media screen and (min-width: 1200px) {
   .card:first-of-type, .card:last-of-type {
     grid-row: span 2;
   }
 }
+.card_text {
+  font-size: 0.825rem;
+  line-height: 1.5rem;
+}
 .card_img {
+  width: 35%;
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 0;
+  right: 0;
+  padding: inherit;
 }
 .card:nth-of-type(1) > hr {
   border-color: hsl(180deg, 62%, 55%);
