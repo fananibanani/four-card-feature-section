@@ -1,0 +1,70 @@
+/* CARD */
+.card {
+  background: white;
+  width: $card-width-s;
+  height: $card-height-s;
+  box-shadow: 0 .5rem 2rem -1rem $grayish-blue;
+  border-radius: 10px;
+  padding: 1.7rem;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    width: $card-width-l;
+    height: $card-height-l;
+  }
+
+  &_title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $very-dark-blue;
+    margin-bottom: .3rem;
+    @media screen and (min-width: $phone) {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:first-of-type,
+    &:last-of-type {
+      grid-row: span 2;
+    }
+  }
+
+  &_text {
+    font-size: .825rem;
+    line-height: 1.5rem;
+  }
+
+  &_img {
+    width: 35%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: inherit;
+  }
+
+  &:nth-of-type(1) > hr {
+    border-color: $cyan;
+  }
+
+  &:nth-of-type(2) > hr {
+    border-color: $red;
+  }
+
+  &:nth-of-type(3) > hr {
+    border-color: $orange;
+  }
+
+  &:nth-of-type(4) > hr {
+    border-color: $blue;
+  }
+}
+
+hr {
+  border: 2px solid;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}

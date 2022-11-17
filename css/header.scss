@@ -1,0 +1,28 @@
+/* HEADER */
+.header {
+  text-align: center;
+  width: $card-width-s;
+  max-width: 80%;
+  margin: 5rem auto;
+  @media screen and (min-width: $tablet) {
+    width: calc($card-width-l * 1.5);
+    margin-bottom: 4rem;
+  }
+
+  &_title1, &_title2 {
+    font-size: 1.25rem;
+    color: $very-dark-blue;
+    @media screen and (min-width: $phone) {
+      font-size: 1.5rem;
+    }
+    @media screen and (min-width: $tablet) {
+        font-size: 2.25rem;
+    }
+    font-weight: 200;
+  }
+
+  &_title2 {
+    font-weight: 600;
+    margin-bottom: .5em;
+  }
+}

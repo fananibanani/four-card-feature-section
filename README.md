@@ -14,9 +14,6 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -28,55 +25,64 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./images/screenshot.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://fananibanani.github.io/four-card-feature-section/](https://fananibanani.github.io/four-card-feature-section/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- SCSS
+- Sass variables
 - CSS Grid
 - Mobile-first workflow
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Learned how to use @import and partials in SCSS. Admittedly only tried this at the very end when my code was 95% done.
+- Learned a lot more about CSS grid than what basic knowledge I had before. I'm especially proud of how I figured out to do the transition from one-column layout (mobile view) to two-by-two (tablet view) and then to the one-two-one layout (desktop view) as shown in the design.
+  - I did this by first creating a 4-row column on mobile.
+  - Then for tablet view the grid changes to a two-by-two layout, and the grid-auto-flow kicks in, making sure that the content flows horizontally.
+  - And for desktop view the first and last cards span the height of 2 rows. Because of that the last card spills over the tablet grid layout, resulting in an implicitly-created column, so a whole new column and row setup was not needed for desktop view. The grid-auto-flow also changes to column so that the layout matches the design.
+  - Here is how this looked in my code:
+  
+```scss
+main {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: $card-width-s;
+  grid-template-rows: repeat(4, $card-height-s);
+  gap: 1.5rem;
+  margin: 0 auto max(2rem, 4rem) auto;
+  max-width: fit-content;
+  place-items: center;
 
-To see how you can add code snippets, see below:
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, $card-width-l);
+    grid-template-rows: repeat(2, $card-height-l);
+    grid-auto-columns: $card-width-l;
+    gap: 2rem;
+  }
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+  @media screen and (min-width: $desktop) {
+    grid-auto-flow: column;
+  }
+}
+
+.card {
+  @media screen and (min-width: $desktop) {
+    &:first-of-type,
+    &:last-of-type {
+      grid-row: span 2;
+    }
+  }
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
@@ -87,20 +93,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [CSS-tricks: grid-auto-flow](https://css-tricks.com/almanac/properties/g/grid-auto-flow/) - This helped me to figure out the grid auto flow setting.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Sass At-Rules @import](https://sass-lang.com/documentation/at-rules/import) - This is what helped me understand the usage of @import for partials as I wasn't yet very familiar with it.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@fananibanani](https://www.frontendmentor.io/profile/fananibanani)
