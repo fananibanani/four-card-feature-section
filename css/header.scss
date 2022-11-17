@@ -38,6 +38,7 @@
 /* CONTRAST TOGGLE BUTTON */
 .contrast_button {
   position: fixed;
+  z-index: 1;
   top: 0.5rem;
   right: 0.5rem;
   background: $very-dark-blue;
@@ -47,4 +48,5 @@
   border: none;
   border-radius: 5px;
   padding: 5px;
+  opacity: 90%;
 }
