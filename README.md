@@ -91,13 +91,15 @@ main {
 
 - The little bit of JS I included in this project has definitely made me wanna do more with Vanilla JS to get a hang of manipulating and updating the DOM.
 - I hope to learn more about CSS grid usage in the future, since I still don't have a very good grasp of it.
+- I would like to figure out how to make similar designs to this one more responsive. I started with a more responsive code, but in the end opted for fixed widths and heights many places because the design would not work otherwise.
 
 ### Useful resources
 
 - [CSS-tricks: grid-auto-flow](https://css-tricks.com/almanac/properties/g/grid-auto-flow/) - This helped me to figure out the grid auto flow setting.
 - [Sass At-Rules @import](https://sass-lang.com/documentation/at-rules/import) - This is what helped me understand the usage of @import for partials as I wasn't yet very familiar with it.
 - [Under-Engineered Toggles Too](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html)
-  [How I built a dark mode toggle](https://hidde.blog/dark-light/) - These two articles helped me figure out how to make my low/high contrast toggle button.
+- [How I built a dark mode toggle](https://hidde.blog/dark-light/)
+  - These two articles helped me figure out how to make my low/high contrast toggle button.
 
 ## Author
 
