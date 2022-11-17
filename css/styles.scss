@@ -35,14 +35,18 @@ $card-height-l: 250px;
   box-sizing: border-box;
 }
 
-body {
+html {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: $grayish-blue;
+}
+
+body {
   background: $very-light-gray;
 }
 
 @import "header";
 @import "main";
 @import "card";
+@import "high-contrast";

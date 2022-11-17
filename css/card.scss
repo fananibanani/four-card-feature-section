@@ -3,24 +3,26 @@
   background: white;
   width: $card-width-s;
   height: $card-height-s;
-  box-shadow: 0 .5rem 2rem -1rem $grayish-blue;
+  box-shadow: 0 1rem 2.5rem -1.5rem $grayish-blue;
   border-radius: 10px;
-  padding: 1.7rem;
+  padding: 1.9rem;
   position: relative;
   overflow: hidden;
 
   @media screen and (min-width: $tablet) {
     width: $card-width-l;
     height: $card-height-l;
+    padding: 2.2rem;
   }
 
   &_title {
-    font-size: 1.125rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: $very-dark-blue;
     margin-bottom: .3rem;
     @media screen and (min-width: $phone) {
       font-size: 1.3rem;
+      margin-bottom: .5rem;
     }
   }
 
@@ -32,7 +34,7 @@
   }
 
   &_text {
-    font-size: .825rem;
+    font-size: .85rem;
     line-height: 1.5rem;
   }
 
@@ -42,6 +44,9 @@
     bottom: 0;
     right: 0;
     padding: inherit;
+    @media screen and (min-width: $phone) {
+      width: 37%;
+    }
   }
 
   &:nth-of-type(1) > hr {

@@ -1,6 +1,6 @@
 # Frontend Mentor - Four card feature section solution
 
-This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -41,23 +41,24 @@ Users should be able to:
 - Sass variables
 - CSS Grid
 - Mobile-first workflow
+- Vanilla Javascript
 
 ### What I learned
 
-- Learned how to use @import and partials in SCSS. Admittedly only tried this at the very end when my code was 95% done.
+- Learned how to use @import and partials in SCSS. Admittedly only tried this at the very end when my code was about 95% done.
 - Learned a lot more about CSS grid than what basic knowledge I had before. I'm especially proud of how I figured out to do the transition from one-column layout (mobile view) to two-by-two (tablet view) and then to the one-two-one layout (desktop view) as shown in the design.
   - I did this by first creating a 4-row column on mobile.
   - Then for tablet view the grid changes to a two-by-two layout, and the grid-auto-flow kicks in, making sure that the content flows horizontally.
   - And for desktop view the first and last cards span the height of 2 rows. Because of that the last card spills over the tablet grid layout, resulting in an implicitly-created column, so a whole new column and row setup was not needed for desktop view. The grid-auto-flow also changes to column so that the layout matches the design.
   - Here is how this looked in my code:
-  
+
 ```scss
 main {
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: $card-width-s;
   grid-template-rows: repeat(4, $card-height-s);
-  gap: 1.5rem;
+  gap: 1.6rem;
   margin: 0 auto max(2rem, 4rem) auto;
   max-width: fit-content;
   place-items: center;
@@ -84,16 +85,19 @@ main {
 }
 ```
 
+- Also learned how to incorporate basic Vanilla Javascript into my HTML and how to manipulate CSS with JS. This wasn't part of the original design, but I felt like the original contrast was horribly low, so I wanted to try to make a toggle to show the difference between the original design and a higher-contrast version that actually passes WCAG criteria.
+
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- The little bit of JS I included in this project has definitely made me wanna do more with Vanilla JS to get a hang of manipulating and updating the DOM.
+- I hope to learn more about CSS grid usage in the future, since I still don't have a very good grasp of it.
 
 ### Useful resources
 
 - [CSS-tricks: grid-auto-flow](https://css-tricks.com/almanac/properties/g/grid-auto-flow/) - This helped me to figure out the grid auto flow setting.
 - [Sass At-Rules @import](https://sass-lang.com/documentation/at-rules/import) - This is what helped me understand the usage of @import for partials as I wasn't yet very familiar with it.
+- [Under-Engineered Toggles Too](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html)
+  [How I built a dark mode toggle](https://hidde.blog/dark-light/) - These two articles helped me figure out how to make my low/high contrast toggle button.
 
 ## Author
 

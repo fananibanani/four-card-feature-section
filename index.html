@@ -5,7 +5,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" contrast="low">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,11 +20,28 @@
 
     <link rel="stylesheet" href="./css/styles.css" />
 
+    <script
+      src="https://kit.fontawesome.com/bb9827b604.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./contrast-selector.js"></script>
+
     <title>Frontend Mentor | Four card feature section</title>
   </head>
 
   <body>
     <header class="header">
+      <button
+        class="contrast_button"
+        id="contrast_button"
+        type="button"
+        aria-pressed="false"
+        onclick="toggle(this.id)"
+      >
+        Toggle low/high contrast <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+
       <h1 class="header_title1">Reliable, efficient delivery</h1>
       <h2 class="header_title2">Powered by Technology</h2>
       <p class="header_text">
@@ -70,5 +87,18 @@
         <img class="card_img" alt="" src="./images/icon-calculator.svg" />
       </section>
     </main>
+
+    <script>
+      function toggle(btnID) {
+        let theButton = document.getElementById(btnID);
+        if (theButton.getAttribute("aria-pressed") == "false") {
+          theButton.setAttribute("aria-pressed", "true");
+          document.documentElement.setAttribute("contrast", "high");
+        } else {
+          theButton.setAttribute("aria-pressed", "false");
+          document.documentElement.setAttribute("contrast", "low");
+        }
+      }
+    </script>
   </body>
 </html>

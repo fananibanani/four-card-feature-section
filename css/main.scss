@@ -4,7 +4,7 @@ main {
   grid-auto-flow: row;
   grid-template-columns: $card-width-s;
   grid-template-rows: repeat(4, $card-height-s);
-  gap: 1.5rem;
+  gap: 1.6rem;
   margin: 0 auto max(2rem, 4rem) auto;
   max-width: fit-content;
   place-items: center;

@@ -1,0 +1,13 @@
+/* HIGH CONTRAST SETTINGS */
+html[contrast=high] {
+  color: $very-dark-blue;
+
+  .contrast_button {
+    background: $grayish-blue;
+    color: $very-dark-blue;
+  }
+
+  .card {
+    box-shadow: 0 .5rem 2rem -0.5rem $very-dark-blue;
+  }
+}
